@@ -29,7 +29,6 @@ body {
 
 header {
     width: 100vw;
-    height: 8vh;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -63,6 +62,7 @@ header {
     display: flex;
     justify-content: space-between;
     position: relative;
+    align-items: center;
 }
 
 .navList {
@@ -155,8 +155,7 @@ img {
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
-    padding-top: 15vh;
-    height: 90vh;
+    padding-top: 80px;
 }
 
 .objTitle {
@@ -371,6 +370,7 @@ img {
 
 .getStarted {
     display: flex;
+    margin-bottom: 10%;
 }
 
 .getStartedText {
@@ -593,7 +593,7 @@ span.psw {
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
-    z-index: 1;
+    z-index: 3;
     /* Sit on top */
     left: 0;
     top: 0;
@@ -664,6 +664,67 @@ span.psw {
     }
 }
 
+.headerMobile{
+    display: flex;
+    flex-direction: column;
+}
+
+.headerDesk{
+    display: none;
+}
+
+.navMobile{
+    background-color: #0D0D0D;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.logoMobile{
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.burger{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+#burgersvg{
+    height: 50%;
+    filter: invert(99%) sepia(0%) saturate(7164%) hue-rotate(181deg) brightness(113%) contrast(100%);
+}
+
+.listNavMobile{
+    display: none;
+    background-color: rgb(73, 73, 73);
+    color: white;
+    transition: 200ms ease;
+}
+
+#connectionMobile{
+        font-size: 1rem;
+        background: #44D86D;
+        transform: skew(-15deg);
+        color: white;
+        padding: 3px 10px 3px 10px;
+        transition: 200ms ease;
+        box-shadow: 3px 3px 0 black;
+}
+
+#connectionMobile:hover {
+    opacity: 0.8;
+}
+
+.liNavMobile{
+    padding: 5px 0 5px 10px;
+
+}
+
 @media screen and (min-width:576px) {
     .programs {
         display: flex;
@@ -730,6 +791,21 @@ span.psw {
     .txtAdv{
         padding-bottom: 0%;
     }
+    .headerDesk{
+        display: flex;
+    }
+    .getStarted {
+        margin-bottom: 0;
+    }
+    .headerMobile{
+        display: none;
+    }
+    .header{
+        height: 8vh;
+    }
+    .modal{
+        z-index: 1;
+    }
 }
 
 @media screen and (min-width:1201px) {
@@ -757,7 +833,7 @@ span.psw {
         flex-direction: row;
         position: relative;
         z-index: 1;
-        height: 80vh;
+        height:80vh;
         padding-top: 10vh;
         box-shadow: 0px 14px 36px -12px #000000;
     }
@@ -778,9 +854,6 @@ span.psw {
     .textTop {
         width: 80%;
     }
-    .modal-content {
-        width: 40%;
-    }
 }
 
 @media screen and (max-width:768px) {
@@ -788,4 +861,5 @@ span.psw {
         font-size: 0.8rem;
     }
 }
+
 
