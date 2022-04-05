@@ -7,5 +7,4 @@ RewriteEngine On
 RewriteRule ^accueil$ /controllers/page-controller-home.php [L]
 
 # /signin -> /controllers/home-controller.php
-
 RewriteRule ^inscription$ /controllers/page-controller-signup.php [L]

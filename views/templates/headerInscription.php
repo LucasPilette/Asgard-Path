@@ -25,7 +25,9 @@
                 <li class="liNavMobile">Tech</li>
                 <li class="liNavMobile">Food</li>
                 <li class="liNavMobile">Join us</li>
-                <li class="liNavMobile"><p id="connectionMobile" class="animated connection">Connexion</p></li>
+                <li class="liNavMobile">
+                    <p id="connectionMobile" class="animated connection">Connexion</p>
+                </li>
             </ul>
         </div>
     </header>

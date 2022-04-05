@@ -182,14 +182,14 @@ img {
     width: 100%;
 }
 
-.advDiv{
+.advDiv {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
 }
 
-.adv{
+.adv {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -198,24 +198,22 @@ img {
     margin-bottom: 5%;
 }
 
-.descAdv{
+.descAdv {
     text-align: center;
     padding: 0 5% 0 5%;
     font-size: 1.2rem;
 }
 
-.imgAdv{
+.imgAdv {}
 
-}
-
-.txtAdv{
+.txtAdv {
     font-weight: bold;
     font-size: 1.5rem;
     padding-bottom: 5%;
 }
 
 
-#lock{
+#lock {
     filter: invert(68%) sepia(69%) saturate(442%) hue-rotate(80deg) brightness(93%) contrast(89%);
 }
 
@@ -391,7 +389,7 @@ img {
 }
 
 .blackBg {
-    margin-top:10%;
+    margin-top: 10%;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -524,7 +522,7 @@ input[type=password] {
 /* Set a style for all buttons */
 button {
     background-color: #44D86D;
-    color:rgb(73, 73, 73) ;
+    color: rgb(73, 73, 73);
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -532,13 +530,14 @@ button {
     width: 100%;
 }
 
-#cancel{
+#cancel {
     color: #44D86D;
     background-color: rgb(73, 73, 73);
 }
 
 button:hover {
-    opacity: 0.9;;
+    opacity: 0.9;
+    ;
 }
 
 
@@ -549,28 +548,28 @@ button:hover {
     position: relative;
 }
 
-.footContainer{
+.footContainer {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     padding-bottom: 2%;
 }
 
-#connect{
+#connect {
     font-size: 1.2rem;
 }
 
-.signUp{
+.signUp {
     font-weight: bold;
     font-size: 1.3rem;
 }
 
-.signUpLink{
+.signUpLink {
     transition: 50ms ease;
     text-decoration: none;
 }
 
-.signUpLink:hover{
+.signUpLink:hover {
     cursor: pointer;
     opacity: 0.8;
 }
@@ -666,16 +665,16 @@ span.psw {
     }
 }
 
-.headerMobile{
+.headerMobile {
     display: flex;
     flex-direction: column;
 }
 
-.headerDesk{
+.headerDesk {
     display: none;
 }
 
-.navMobile{
+.navMobile {
     background-color: #0D0D0D;
     height: fit-content;
     display: flex;
@@ -683,46 +682,46 @@ span.psw {
     padding: 0 5%;
 }
 
-.logoMobile{
+.logoMobile {
     color: white;
     font-size: 1rem;
     display: flex;
     align-items: center;
 }
 
-.burger{
+.burger {
     height: 60px;
     display: flex;
     align-items: center;
 }
 
-#burgersvg{
+#burgersvg {
     height: 50%;
     filter: invert(99%) sepia(0%) saturate(7164%) hue-rotate(181deg) brightness(113%) contrast(100%);
 }
 
-.listNavMobile{
+.listNavMobile {
     display: none;
     background-color: rgb(73, 73, 73);
     color: white;
     transition: 200ms ease;
 }
 
-#connectionMobile{
-        font-size: 1rem;
-        background: #44D86D;
-        transform: skew(-15deg);
-        color: white;
-        padding: 3px 10px 3px 10px;
-        transition: 200ms ease;
-        box-shadow: 3px 3px 0 black;
+#connectionMobile {
+    font-size: 1rem;
+    background: #44D86D;
+    transform: skew(-15deg);
+    color: white;
+    padding: 3px 10px 3px 10px;
+    transition: 200ms ease;
+    box-shadow: 3px 3px 0 black;
 }
 
 #connectionMobile:hover {
     opacity: 0.8;
 }
 
-.liNavMobile{
+.liNavMobile {
     padding: 5px 0 5px 10px;
 
 }
@@ -762,6 +761,7 @@ span.psw {
     .objTitle {
         margin-bottom: 0;
     }
+
     .modal-content {
         background-color: #fefefe;
         margin: 5% auto 15% auto;
@@ -770,42 +770,52 @@ span.psw {
         width: 50%;
         /* Could be more or less, depending on screen size */
     }
-    .advDiv{
+
+    .advDiv {
         flex-direction: row;
     }
-    .adv{
+
+    .adv {
         width: 50%;
         margin-top: 0;
         margin-bottom: 3%;
     }
-    .descAdv{
+
+    .descAdv {
         padding: 0 10% 0 10%;
     }
-    .blackBg{
+
+    .blackBg {
         margin-top: 3%;
     }
-    .black{
+
+    .black {
         width: 70%;
     }
-    .imgAdv{
-    
-    }
-    .txtAdv{
+
+    .imgAdv {}
+
+    .txtAdv {
         padding-bottom: 0%;
     }
-    .headerDesk{
+
+    .headerDesk {
         display: flex;
     }
+
     .getStarted {
         margin-bottom: 0;
     }
-    .headerMobile{
+
+    .headerMobile {
         display: none;
     }
-    .header{
+
+    .header {
         height: 8vh;
     }
-    .modal{
+
+    .modal {
         z-index: 1;
     }
 }
@@ -835,10 +845,11 @@ span.psw {
         flex-direction: row;
         position: relative;
         z-index: 1;
-        height:80vh;
+        height: 80vh;
         padding-top: 10vh;
         box-shadow: 0px 14px 36px -12px #000000;
     }
+
     .modal-content {
         width: 30%;
     }
@@ -863,5 +874,3 @@ span.psw {
         font-size: 0.8rem;
     }
 }
-
-
