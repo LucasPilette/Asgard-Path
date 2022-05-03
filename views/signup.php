@@ -25,3 +25,24 @@
         </div>
     </form>
 </div>
+<div id="modal" class="modal">
+        <form class="modal-content animate" action="" method="post">
+            <div class="headContainer">
+                <span id="close" class="close" title="Close Modal">&times;</span>
+                <h1>Asgard <span class="green">Path</span></h1>
+            </div>
+
+            <div class="modalContainer">
+                <label for="uname"><b>Nom d'utilisateur</b></label>
+                <input type="text" placeholder="Nom d'utilisateur" required>
+
+                <label for="psw"><b>Mot de passe</b></label>
+                <input type="password" placeholder="Mot de passe" required>
+
+                <button type="submit" id="connect">Se connecter</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Se rappeler de moi
+                </label>
+            </div>
+        </form>
+    </div>

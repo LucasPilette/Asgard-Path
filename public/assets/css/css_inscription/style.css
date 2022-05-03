@@ -46,6 +46,10 @@ header {
     padding-top: 400px;
 }
 
+.modalContainer {
+    padding: 16px;
+}
+
 .invisEffect {
     /* transition: 1s ease !important; */
     position: absolute;

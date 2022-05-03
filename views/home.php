@@ -11,7 +11,6 @@
                 </p>
             </div>
             <div class="getStarted">
-                <!-- <p class="getStartedText">Je commence</p> -->
                 <a class="cta">
                     <span>START</span>
                     <span>

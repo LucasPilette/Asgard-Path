@@ -23,7 +23,6 @@ window.addEventListener('scroll', () => {
     let scrollPos = window.scrollY;
     let containerHeight = (container.offsetHeight)
     let headerHeight = (header.offsetHeight)
-    console.log(containerHeight)
     if (scrollPos >= (containerHeight - headerHeight)) {
         navList.classList.add('navListWhite');
     } else {
