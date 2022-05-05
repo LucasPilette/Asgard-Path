@@ -8,3 +8,6 @@ RewriteRule ^accueil$ /controllers/page-controller-home.php [L]
 
 # /signin -> /controllers/home-controller.php
 RewriteRule ^inscription$ /controllers/page-controller-signup.php [L]
+
+# /profile -> /controllers/profile-controller.php
+RewriteRule ^profile$ /controllers/page-controller-profile.php [L]

@@ -4,6 +4,7 @@
 // Appel des constantes et initialisation du tableau d'erreurs
 
 require_once(dirname(__FILE__) . '/../config/constForm.php');
+require_once(dirname(__FILE__).'/../models/User.php');
 
 $errors = [];
 
@@ -110,6 +111,8 @@ include(dirname(__FILE__) .'/../views/templates/headerInscription.php');
 // Affichage du profil si le formulaire est bien rempli
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($errors)) {
+    $user = new User($lastname,$firstname,$email,$login,$encryptedPassword,2);
+    $user->add();
     include(dirname(__FILE__) . '/../views/profile.php');
 } else {
     include(dirname(__FILE__) . '/../views/signup.php');

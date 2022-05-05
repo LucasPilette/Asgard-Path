@@ -74,3 +74,30 @@ burgersvg.addEventListener('click',()=> {
         listNavMobile.style.display = "block";
     }
 })
+
+login.addEventListener('keyup', () => {
+    if(login.value.length >= 4){
+        let formLogin = new FormData();
+        formLogin.append('login',login.value);
+        formLogin.append('ajax',true);
+        fetch('/controllers/page-controller-home.php', {
+            method: 'POST',
+            body : formLogin
+        } )
+        .then(response => response.json())
+        .then(userCheck =>  {
+                if (userCheck == login.value){
+                    login.classList.remove('redBorder');
+                    login.classList.add('greenBorder');
+
+                } else {
+                    login.classList.remove('greenBorder');
+                    login.classList.add('redBorder');
+                }
+        })
+    } else {
+        login.classList.remove('greenBorder');
+        login.classList.remove('redBorder');
+    }
+
+} )

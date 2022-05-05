@@ -186,4 +186,77 @@ class User {
             return false;
         }
     }
+    public static function isExist(string $loginUser){
+        try{
+            $sql = "SELECT `login` FROM `users` WHERE `login` = :loginUser; ";
+            $sth = DataBase::dbConnect()-> prepare($sql);
+            $sth->bindValue(':loginUser', $loginUser, PDO::PARAM_STR);
+            if($sth->execute()){
+                return $sth->fetch();
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
+
+    public static function getOne(int $id):object{
+        $sql = 'SELECT * FROM `users` WHERE `users`.`ID` = :id;';
+        try{
+            $sth =  DataBase::dbConnect()->prepare($sql);
+            $sth->bindValue(':id',$id, PDO::PARAM_INT);
+            $verif = $sth ->execute();
+            if(!$verif){
+                throw new PDOException();
+            } else {
+                return $sth->fetch();
+            }
+        } catch(PDOException $e){
+            return $e;
+        }
+    }
+
+    public static function getOneLogin(string $loginUser):object{
+        $sql = 'SELECT * FROM `users` WHERE `users`.`login` = :loginUser;';
+        try{
+            $sth =  DataBase::dbConnect()->prepare($sql);
+            $sth->bindValue(':loginUser',$loginUser, PDO::PARAM_STR);
+            if(!$sth ->execute()){
+                throw new PDOException();
+            } else {
+                return $sth->fetch();
+            }
+        } catch(PDOException $e){
+            return $e;
+        }
+    }
+
+    public function modifyOne($id){
+        $sql = 
+        'UPDATE `users`  
+        SET `firstname` = :newFirstname, `lastname` = :newLastname, `mail` = :newMail, `login` = :newLogin, `password` = :newMPassword
+        WHERE `ID` = :id';
+        $sth =  DataBase::dbConnect()->prepare($sql);
+        $sth->bindValue(':newLastname', $this->getLastname(), PDO::PARAM_STR);
+        $sth->bindValue(':newFirstname', $this->getFirstname(), PDO::PARAM_STR);
+        $sth->bindValue(':newBirthDate', $this->getEmail(), PDO::PARAM_STR);
+        $sth->bindValue(':newPhone', $this->getLogin(), PDO::PARAM_STR);
+        $sth->bindValue(':newMail', $this->getPassword(), PDO::PARAM_STR);
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        $sth ->execute();
+        return $sth->fetch(); 
+    }
+
+    public function deleteUser($id){
+        $sql = 'DELETE FROM `users`
+        WHERE `users`.`ID` = :id';
+        $sth = DataBase::dbConnect()->prepare($sql);
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        $sth ->execute();  
+        return $sth->fetch();
+    }
+
+
 }

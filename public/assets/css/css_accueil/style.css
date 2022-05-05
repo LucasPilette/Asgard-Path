@@ -639,6 +639,19 @@ span.psw {
     transform: scale(1.1);
 }
 
+
+.container>.greenBorder{
+    outline: none !important;
+    border:2px solid green;
+    border-radius: 5px;
+}
+
+.container>.redBorder{
+    outline: none !important;
+    border:2px solid red;
+    border-radius: 5px;
+}
+
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
