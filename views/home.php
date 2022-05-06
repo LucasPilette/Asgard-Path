@@ -163,10 +163,6 @@
                 <input type="checkbox" id="showPassword"> Voir le mot de passe
 
                 <button type="submit" id="connect">Se connecter</button>
-
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Se rappeler de moi
-            </label>
         </div>
 
         <div class="footContainer">

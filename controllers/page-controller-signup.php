@@ -124,7 +124,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($errors)) {
 
     mail($email, 'Validation de votre inscription', $message, implode("\r\n", $headers));
 
-    include(dirname(__FILE__) . '/../views/profile.php');
+    header('location: /accueil');
+    die;
 } else {
     include(dirname(__FILE__) . '/../views/signup.php');
 };

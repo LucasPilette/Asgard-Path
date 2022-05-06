@@ -103,7 +103,6 @@ login.addEventListener('keyup', () => {
 } )
 
 
-
 showPassword.addEventListener('change', () => {
     if(password.type === "password"){
         password.type = "text"
@@ -111,3 +110,5 @@ showPassword.addEventListener('change', () => {
         password.type = "password"
     }
 })
+
+

@@ -46,3 +46,4 @@
             </div>
         </form>
     </div>
+    <script src="../../public/assets/js/js_inscription/script.js"></script>
