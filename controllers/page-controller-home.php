@@ -31,7 +31,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $errors['password'] = 'Le mot de passe saisi est incorrect.';
         }
     }
-
     if(empty($errors)){
         $_SESSION['user_id'] = $user->ID;
         header('location: /profile?id='.$user->ID);

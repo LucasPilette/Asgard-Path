@@ -113,6 +113,17 @@ include(dirname(__FILE__) .'/../views/templates/headerInscription.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($errors)) {
     $user = new User($lastname,$firstname,$email,$login,$encryptedPassword,2);
     $user->add();
+
+    $headers[] = 'MIME-Version: 1.0';
+    $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+
+    $link = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/validate?login='.$login;
+
+    $message = 'Veuillez cliquez sur le lien suivant : <br>
+    <a href ='.$link.'>Activation</a>';
+
+    mail($email, 'Validation de votre inscription', $message, implode("\r\n", $headers));
+
     include(dirname(__FILE__) . '/../views/profile.php');
 } else {
     include(dirname(__FILE__) . '/../views/signup.php');

@@ -11,3 +11,6 @@ RewriteRule ^inscription$ /controllers/page-controller-signup.php [L]
 
 # /profile -> /controllers/profile-controller.php
 RewriteRule ^profile$ /controllers/page-controller-profile.php [L]
+
+# /validate -> /controllers/validate-controller.php
+RewriteRule ^validate$ /controllers/page-controller-validate.php [L]

@@ -160,6 +160,7 @@
                 <label for="password"><b>Mot de passe</b></label>
                 <input name="password" id="password" type="password" placeholder="Mot de passe" >
                 <span class="error"><?= $errors['password'] ?? '' ?></span>
+                <input type="checkbox" id="showPassword"> Voir le mot de passe
 
                 <button type="submit" id="connect">Se connecter</button>
 

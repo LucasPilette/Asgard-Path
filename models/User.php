@@ -11,6 +11,8 @@ class User {
     private string $_login;
     private string $_password;
     private int $_id_roles;
+    private string $_registered_at;
+    public ?string $_validated_at;
     private object $_pdo;
 
             /**
@@ -21,17 +23,21 @@ class User {
      * @param string $email
      * @param string $login
      * @param string $password
+     * @param string $_registered_at;
+     * @param string $_validated_at;
      * @param int $_id_roles
      * @param object $pdo
      */
 
-    public function __construct(string $lastname = '', string $firstname = '', string $email = '', string $login = '', string $password = '', int $_id_roles = 0){
+    public function __construct(string $lastname = '', string $firstname = '', string $email = '', string $login = '', string $password = '', int $_id_roles = 0, string $_registered_at = '', ?string $_validated_at = NULL){
         $this->_lastname = $lastname;
         $this->_firstname = $firstname;
         $this->_email = $email;
         $this->_login = $login;
         $this->_password = $password;
         $this->_id_roles = $_id_roles;
+        $this->_registered_at = $_registered_at;
+        $this->_validated_at = $_validated_at;
         $this->_pdo = DataBase::dbConnect();
     }
 
@@ -98,6 +104,16 @@ class User {
         return $this->_id_roles;
     }
 
+                            /**
+     * GETTER password
+     * @return int
+     */
+
+    public function getValidatedAt():string{
+        return $this->_validated_at;
+    }
+    
+
         /**
      * SETTER pour l'attribut privé _id
      * @param int $id
@@ -156,6 +172,16 @@ class User {
      */
     public function setPassword(string $password):void{
         $this->_password = $password;
+    }
+
+                    /**
+     * SETTER pour l'attribut publique _validated_at
+     * @param string $validated_at
+     * 
+     * @return void
+     */
+    public function setValidatedAt(string $_validated_at):void{
+        $this->_validated_at = $_validated_at;
     }
 
                     /**
@@ -223,10 +249,12 @@ class User {
         try{
             $sth =  DataBase::dbConnect()->prepare($sql);
             $sth->bindValue(':loginUser',$loginUser, PDO::PARAM_STR);
-            if(!$sth ->execute()){
+            $sth ->execute();
+            $result = $sth->fetch();
+            if(!$result){
                 throw new PDOException();
             } else {
-                return $sth->fetch();
+                return $result;
             }
         } catch(PDOException $e){
             return $e;
@@ -248,6 +276,24 @@ class User {
         $sth ->execute();
         return $sth->fetch(); 
     }
+
+
+    public function updateValidation(){
+        $sql = 
+        'UPDATE `users`  
+        SET `validated_at` = :validated_at
+        WHERE `login` = :loginUser';
+        $sth =  DataBase::dbConnect()->prepare($sql);
+        $sth->bindValue(':validated_at', $this->getValidatedAt(), PDO::PARAM_STR);
+        $sth->bindValue(':loginUser', $this->getLogin(), PDO::PARAM_STR);
+        return $sth->execute(); 
+    }
+
+    public function update(object $user){
+        $this->_login = $user->login;
+        $this->_validated_at = $user->validated_at;
+    }
+
 
     public function deleteUser($id){
         $sql = 'DELETE FROM `users`

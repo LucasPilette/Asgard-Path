@@ -1,7 +1,8 @@
 <div class="container">
-<?php 
-    echo($user->firstname);
+<?php if(!empty($_SESSION['user_id'])){
+    echo('Bonjour '.$user->firstname.' ');
     echo($user->lastname);
+}
 ?>
 </div>
 
